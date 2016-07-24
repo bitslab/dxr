@@ -50,6 +50,10 @@ def needles(condensed,
 
         """
         value = {'name': entity['name']}
+        if 'func_end' in entity:
+          value['func_end'] = entity['func_end']
+        if 'func_begin' in entity:
+          value['func_begin'] = entity['func_begin']
         if include_qualname:
             qualname = value['qualname'] = entity['qualname']
             if include_typeless_qualname:

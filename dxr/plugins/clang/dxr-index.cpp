@@ -585,6 +585,8 @@ public:
         args.erase(1, 2);
       args += ")";
       recordValue("args", args);
+      recordValue("func_begin",locationToString(d->getSourceRange().getBegin()));
+      recordValue("func_end",  locationToString(d->getSourceRange().getEnd()));
       SourceLocation beginLoc = d->getNameInfo().getBeginLoc();
       recordValue("loc", locationToString(beginLoc));
       recordLocEndForName(functionName, beginLoc, d->getNameInfo().getEndLoc());
